@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
+import { DesignChoices, UpdateDesignFunction } from '@/types/designTypes';
+
 interface ExampleGalleryProps {
-  designChoices: any;
-  updateDesign: (key: string, value: any) => void;
+  designChoices: DesignChoices;
+  updateDesign: UpdateDesignFunction;
   isQuickVersion: boolean;
 }
 
@@ -186,7 +188,7 @@ const ExampleGallery: React.FC<ExampleGalleryProps> = ({
   };
 
   // Example preview component
-  const ExamplePreview = ({ example }: { example: any }) => {
+  const ExamplePreview = ({ example }: { example: { id: string; name: string; description: string; image: string; features: string[] } }) => {
     return (
       <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
         <div className="p-4 bg-gray-100 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-600 flex justify-between items-center">

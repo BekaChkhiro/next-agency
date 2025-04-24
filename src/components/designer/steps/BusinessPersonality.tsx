@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from '../../motion';
 
+import { DesignChoices, UpdateDesignFunction } from '@/types/designTypes';
+
 interface BusinessPersonalityProps {
-  designChoices: any;
-  updateDesign: (key: string, value: any) => void;
+  designChoices: DesignChoices;
+  updateDesign: UpdateDesignFunction;
   isQuickVersion: boolean;
 }
 

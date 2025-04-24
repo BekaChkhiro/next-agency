@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
+import { DesignChoices, UpdateDesignFunction } from '@/types/designTypes';
+
 interface ContentPrioritiesProps {
-  designChoices: any;
-  updateDesign: (key: string, value: any) => void;
+  designChoices: DesignChoices;
+  updateDesign: UpdateDesignFunction;
   isQuickVersion: boolean;
 }
 
@@ -59,29 +61,29 @@ const ContentPriorities: React.FC<ContentPrioritiesProps> = ({
   isQuickVersion 
 }) => {
   const [priorities, setPriorities] = useState<string[]>(
-    designChoices.contentPriorities?.length > 0 
-      ? designChoices.contentPriorities 
+    designChoices.contentPriorities && designChoices.contentPriorities.length > 0 
+      ? [...designChoices.contentPriorities] 
       : contentSections.map(section => section.id)
   );
   
   const [draggingId, setDraggingId] = useState<string | null>(null);
   const [dragOverId, setDragOverId] = useState<string | null>(null);
 
-  const handleDragStart = (e: React.DragEvent, id: string) => {
+  const handleDragStart = (e: React.DragEvent<HTMLLIElement>, id: string) => {
     setDraggingId(id);
     e.dataTransfer.effectAllowed = 'move';
     // Required for Firefox
     e.dataTransfer.setData('text/plain', id);
   };
 
-  const handleDragOver = (e: React.DragEvent, id: string) => {
+  const handleDragOver = (e: React.DragEvent<HTMLLIElement>, id: string) => {
     e.preventDefault();
     if (id !== draggingId) {
       setDragOverId(id);
     }
   };
 
-  const handleDrop = (e: React.DragEvent, id: string) => {
+  const handleDrop = (e: React.DragEvent<HTMLLIElement>, id: string) => {
     e.preventDefault();
     
     if (draggingId && draggingId !== id) {
@@ -142,10 +144,10 @@ const ContentPriorities: React.FC<ContentPrioritiesProps> = ({
                 <motion.li 
                   key={id}
                   draggable
-                  onDragStart={(e) => handleDragStart(e, id)}
-                  onDragOver={(e) => handleDragOver(e, id)}
-                  onDrop={(e) => handleDrop(e, id)}
-                  onDragEnd={handleDragEnd}
+                  onDragStart={(e: any) => handleDragStart(e as React.DragEvent<HTMLLIElement>, id)}
+                  onDragOver={(e: any) => handleDragOver(e as React.DragEvent<HTMLLIElement>, id)}
+                  onDrop={(e: any) => handleDrop(e as React.DragEvent<HTMLLIElement>, id)}
+                  onDragEnd={() => handleDragEnd()}
                   className={`p-4 flex items-center cursor-move transition-colors ${
                     draggingId === id 
                       ? 'bg-indigo-50 dark:bg-indigo-900/20' 

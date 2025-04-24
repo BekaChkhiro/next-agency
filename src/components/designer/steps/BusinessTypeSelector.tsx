@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from '../../motion';
 
+import { DesignChoices, UpdateDesignFunction } from '@/types/designTypes';
+
 interface BusinessTypeSelectorProps {
-  designChoices: any;
-  updateDesign: (key: string, value: any) => void;
+  designChoices: DesignChoices;
+  updateDesign: UpdateDesignFunction;
   isQuickVersion: boolean;
 }
 

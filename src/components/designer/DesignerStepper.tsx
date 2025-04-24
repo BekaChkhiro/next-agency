@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { DesignChoices, UpdateDesignFunction } from '@/types/designTypes';
 import { AnimatePresence } from '@/components/motion';
 import MotionDiv from '@/components/motion/MotionDiv';
 import MotionH2 from '@/components/motion/MotionH2';
@@ -25,7 +26,7 @@ interface DesignerStepperProps {
 
 const DesignerStepper: React.FC<DesignerStepperProps> = ({ isQuickVersion }) => {
   const [currentStep, setCurrentStep] = useState(0);
-  const [designChoices, setDesignChoices] = useState({
+  const [designChoices, setDesignChoices] = useState<DesignChoices>({
     businessType: '',
     businessPersonality: '',
     colorPalette: '',
@@ -81,7 +82,7 @@ const DesignerStepper: React.FC<DesignerStepperProps> = ({ isQuickVersion }) => 
     }
   };
 
-  const handleUpdateDesign = (key: string, value: any) => {
+  const handleUpdateDesign = (key: string, value: unknown) => {
     setDesignChoices(prev => ({
       ...prev,
       [key]: value
