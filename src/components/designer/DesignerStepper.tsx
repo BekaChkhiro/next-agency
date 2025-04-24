@@ -54,17 +54,8 @@ const DesignerStepper: React.FC<DesignerStepperProps> = ({ isQuickVersion }) => 
       ]
     : [
         { id: 'businessType', title: 'Business Type', component: BusinessTypeSelector },
-        { id: 'businessPersonality', title: 'Business Personality', component: BusinessPersonality },
         { id: 'visualStyle', title: 'Visual Style', component: VisualStyleDesigner },
-        { id: 'layoutArchitecture', title: 'Layout Architecture', component: LayoutArchitecture },
-        { id: 'contentPriorities', title: 'Content Priorities', component: ContentPriorities },
-        { id: 'interactiveFeatures', title: 'Interactive Features', component: InteractiveFeatures },
-        { id: 'mobileExperience', title: 'Mobile Experience', component: MobileExperience },
-        { id: 'userJourneyMap', title: 'User Journey Map', component: UserJourneyMap },
-        { id: 'exampleGallery', title: 'Example Gallery', component: ExampleGallery },
-        { id: 'threeDMockup', title: '3D Mockup', component: ThreeDMockup },
         { id: 'specialNeeds', title: 'Special Needs', component: SpecialNeeds },
-        { id: 'resultsBoard', title: 'Results Board', component: ResultsBoard },
         { id: 'meetingScheduler', title: 'Meeting Scheduler', component: MeetingScheduler }
       ];
 
@@ -92,10 +83,10 @@ const DesignerStepper: React.FC<DesignerStepperProps> = ({ isQuickVersion }) => 
   const CurrentStepComponent = steps[currentStep].component;
 
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Progress bar */}
-      <div className="mb-12">
-        <div className="flex justify-between mb-2">
+      <div className="mb-8 sm:mb-12">
+        <div className="flex flex-col sm:flex-row sm:justify-between mb-2 gap-2">
           <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
             Step {currentStep + 1} / {steps.length}
           </span>
@@ -112,16 +103,7 @@ const DesignerStepper: React.FC<DesignerStepperProps> = ({ isQuickVersion }) => 
       </div>
 
       {/* Step title */}
-      <MotionH2 
-        className="text-2xl font-bold mb-8 text-center text-gray-800 dark:text-white"
-        key={`title-${currentStep}`}
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 20 }}
-        transition={{ duration: 0.5 }}
-      >
-        {steps[currentStep].title}
-      </MotionH2>
+      
 
       {/* Step content */}
       <AnimatePresence mode="wait">
@@ -131,7 +113,7 @@ const DesignerStepper: React.FC<DesignerStepperProps> = ({ isQuickVersion }) => 
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -20 }}
           transition={{ duration: 0.5 }}
-          className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-8 mb-8"
+          className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 overflow-hidden"
         >
           <CurrentStepComponent 
             designChoices={designChoices} 
@@ -141,35 +123,40 @@ const DesignerStepper: React.FC<DesignerStepperProps> = ({ isQuickVersion }) => 
         </MotionDiv>
       </AnimatePresence>
 
-      {/* Navigation buttons */}
-      <div className="flex justify-between mt-8">
-        <MotionButton
-          className={`px-6 py-3 rounded-lg font-medium ${
-            currentStep === 0 
-              ? 'bg-gray-200 text-gray-400 cursor-not-allowed dark:bg-gray-700' 
-              : 'bg-white text-indigo-600 border border-indigo-200 hover:bg-indigo-50 dark:bg-gray-700 dark:text-indigo-400 dark:border-gray-600 dark:hover:bg-gray-600'
-          }`}
-          onClick={handlePrevious}
-          disabled={currentStep === 0}
-          whileHover={currentStep !== 0 ? { scale: 1.05 } : {}}
-          whileTap={currentStep !== 0 ? { scale: 0.95 } : {}}
-        >
-          Back
-        </MotionButton>
-        
-        <MotionButton
-          className={`px-6 py-3 rounded-lg font-medium ${
-            currentStep === steps.length - 1
-              ? 'bg-green-600 text-white hover:bg-green-700'
-              : 'bg-indigo-600 text-white hover:bg-indigo-700'
-          }`}
-          onClick={handleNext}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          {currentStep === steps.length - 1 ? 'Finish' : 'Next'}
-        </MotionButton>
+      {/* Navigation buttons - sticky at the bottom */}
+      <div className="fixed bottom-0 left-0 right-0 z-10 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 py-4 px-4 sm:px-6 lg:px-8 shadow-lg">
+        <div className="max-w-6xl mx-auto flex flex-row justify-between gap-4">
+          <MotionButton
+            className={`flex-1 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium ${
+              currentStep === 0 
+                ? 'bg-gray-200 text-gray-400 cursor-not-allowed dark:bg-gray-700' 
+                : 'bg-white text-indigo-600 border border-indigo-200 hover:bg-indigo-50 dark:bg-gray-700 dark:text-indigo-400 dark:border-gray-600 dark:hover:bg-gray-600'
+            }`}
+            onClick={handlePrevious}
+            disabled={currentStep === 0}
+            whileHover={currentStep !== 0 ? { scale: 1.05 } : {}}
+            whileTap={currentStep !== 0 ? { scale: 0.95 } : {}}
+          >
+            Back
+          </MotionButton>
+          
+          <MotionButton
+            className={`flex-1 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium ${
+              currentStep === steps.length - 1
+                ? 'bg-green-600 text-white hover:bg-green-700'
+                : 'bg-indigo-600 text-white hover:bg-indigo-700'
+            }`}
+            onClick={handleNext}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {currentStep === steps.length - 1 ? 'Finish' : 'Next'}
+          </MotionButton>
+        </div>
       </div>
+      
+      {/* Add padding to the bottom to prevent content from being hidden behind the sticky buttons */}
+      <div className="pb-24 sm:pb-20"></div>
     </div>
   );
 };

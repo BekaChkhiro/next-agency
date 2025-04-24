@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface SpecialNeedsProps {
   designChoices: any;
@@ -11,86 +11,86 @@ interface SpecialNeedsProps {
 const specialFeatures = [
   {
     id: 'multilingual',
-    name: 'მრავალენოვანი საიტი',
-    description: 'რამდენიმე ენაზე ხელმისაწვდომი ვებგვერდი',
+    name: 'Multilingual Website',
+    description: 'Website available in multiple languages',
     icon: 'language',
     complexity: 'medium'
   },
   {
     id: 'payment',
-    name: 'გადახდის სისტემა',
-    description: 'ონლაინ გადახდის ინტეგრაცია',
+    name: 'Payment System',
+    description: 'Online payment integration',
     icon: 'credit-card',
     complexity: 'high'
   },
   {
     id: 'membership',
-    name: 'წევრობის სისტემა',
-    description: 'მომხმარებლის რეგისტრაცია და პროფილები',
+    name: 'User Profile System',
+    description: 'User registration and profiles',
     icon: 'user',
     complexity: 'high'
   },
   {
     id: 'seo',
-    name: 'SEO ოპტიმიზაცია',
-    description: 'საძიებო სისტემებისთვის ოპტიმიზაცია',
+    name: 'SEO Optimization',
+    description: 'Search engine optimization',
     icon: 'search',
     complexity: 'medium'
   },
   {
     id: 'analytics',
-    name: 'ანალიტიკა',
-    description: 'ვიზიტორების სტატისტიკის თვალყურის დევნება',
+    name: 'Analytics',
+    description: 'Track visitor statistics',
     icon: 'chart',
     complexity: 'low'
   },
   {
     id: 'blog',
-    name: 'ბლოგი/სიახლეები',
-    description: 'ბლოგის ან სიახლეების სექცია',
+    name: 'Blog/News',
+    description: 'Blog or news section',
     icon: 'news',
     complexity: 'medium'
   },
   {
     id: 'social',
-    name: 'სოციალური ინტეგრაცია',
-    description: 'სოციალური ქსელების ინტეგრაცია',
+    name: 'Social Media Integration',
+    description: 'Integration with social networks',
     icon: 'share',
     complexity: 'low'
   },
   {
     id: 'forms',
-    name: 'მორგებული ფორმები',
-    description: 'კომპლექსური ფორმები მონაცემთა შეგროვებისთვის',
+    name: 'Contact Form',
+    description: 'Complex forms for data collection',
     icon: 'form',
     complexity: 'medium'
   },
   {
     id: 'accessibility',
-    name: 'მისაწვდომობა',
-    description: 'WCAG სტანდარტებთან შესაბამისობა',
+    name: 'Admin Panel',
+    description: 'Content management system',
     icon: 'accessibility',
     complexity: 'medium'
   },
   {
     id: 'search',
-    name: 'საიტის ძიება',
-    description: 'ვებგვერდის შიდა ძიების ფუნქციონალი',
+    name: 'Site Search',
+    description: 'Internal website search functionality',
     icon: 'search-doc',
     complexity: 'medium'
   },
   {
-    id: 'api',
-    name: 'API ინტეგრაცია',
-    description: 'გარე სერვისებთან ინტეგრაცია',
-    icon: 'api',
+    id: 'chat',
+    name: 'Live Chat',
+    description: 'Live chat functionality with users',
+    icon: 'chat',
     complexity: 'high'
   },
   {
-    id: 'chat',
-    name: 'ლაივ ჩატი',
-    description: 'მომხმარებლებთან ლაივ ჩატის ფუნქციონალი',
-    icon: 'chat',
+    id: 'api',
+    name: 'API Integration',
+    description: 'Integration with external services',
+    icon: 'api',
     complexity: 'high'
   }
 ];
@@ -213,13 +213,13 @@ const SpecialNeeds: React.FC<SpecialNeedsProps> = ({
   const getComplexityColor = (complexity: string) => {
     switch(complexity) {
       case 'low':
-        return 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300';
+        return 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 border-green-200 dark:border-green-800/30';
       case 'medium':
-        return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300';
+        return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300 border-yellow-200 dark:border-yellow-800/30';
       case 'high':
-        return 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300';
+        return 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300 border-red-200 dark:border-red-800/30';
       default:
-        return 'bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300';
+        return 'bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300 border-gray-200 dark:border-gray-800/30';
     }
   };
 
@@ -288,74 +288,105 @@ const SpecialNeeds: React.FC<SpecialNeedsProps> = ({
     }
   };
 
+  // Animation variants for container and items
   const container = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.1,
+        delayChildren: 0.1
       }
     }
   };
 
   const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 }
+    hidden: { opacity: 0, y: 20, scale: 0.95 },
+    show: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: {
+        type: 'spring',
+        stiffness: 260,
+        damping: 20
+      }
+    }
+  };
+  
+  // Animation for selected features
+  const selectedItem = {
+    hidden: { opacity: 0, scale: 0.8 },
+    show: { 
+      opacity: 1, 
+      scale: 1,
+      transition: {
+        type: 'spring',
+        stiffness: 300,
+        damping: 20
+      }
+    },
+    exit: { 
+      opacity: 0, 
+      scale: 0.8,
+      transition: { duration: 0.2 }
+    }
   };
 
   return (
-    <div className="py-4">
-      <p className="text-center text-gray-600 dark:text-gray-300 mb-8">
-        აირჩიეთ სპეციალური ფუნქციები და საჭიროებები თქვენი ვებგვერდისთვის. ეს დაგვეხმარება უკეთ შევაფასოთ პროექტის მასშტაბი.
+    <div className="py-4 sm:py-6 md:py-8 px-2 sm:px-4 max-w-7xl mx-auto">
+      <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-center text-gray-800 dark:text-white mb-2 sm:mb-3">Website Features</h2>
+      <p className="text-xs sm:text-sm md:text-base text-center text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 md:mb-10 max-w-2xl mx-auto">
+        Select special features and requirements for your website.
       </p>
 
-      <div className="flex justify-center mb-8">
-        <div className="flex space-x-1 p-1 bg-gray-100 dark:bg-gray-700 rounded-lg">
+      <div className="flex justify-center mb-4 sm:mb-6 md:mb-10">
+        <div className="flex space-x-1 sm:space-x-2 p-1 sm:p-1.5 bg-gray-100 dark:bg-gray-800 rounded-lg sm:rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
           <button
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+            className={`px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-2.5 rounded-md sm:rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 ${
               activeTab === 'all' 
-                ? 'bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 shadow-sm' 
+                ? 'bg-white dark:bg-gray-700 text-indigo-600 dark:text-indigo-400 shadow-sm ring-1 ring-gray-200 dark:ring-gray-600' 
                 : 'text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400'
             }`}
             onClick={() => setActiveTab('all')}
           >
-            ყველა
+            All
           </button>
           <button
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+            className={`px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-2.5 rounded-md sm:rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 ${
               activeTab === 'low' 
                 ? 'bg-white dark:bg-gray-800 text-green-600 dark:text-green-400 shadow-sm' 
                 : 'text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400'
             }`}
             onClick={() => setActiveTab('low')}
           >
-            მარტივი
+            Simple
           </button>
           <button
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+            className={`px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-2.5 rounded-md sm:rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 ${
               activeTab === 'medium' 
                 ? 'bg-white dark:bg-gray-800 text-yellow-600 dark:text-yellow-400 shadow-sm' 
                 : 'text-gray-600 dark:text-gray-300 hover:text-yellow-600 dark:hover:text-yellow-400'
             }`}
             onClick={() => setActiveTab('medium')}
           >
-            საშუალო
+            Medium
           </button>
           <button
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+            className={`px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 md:py-2.5 rounded-md sm:rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 ${
               activeTab === 'high' 
                 ? 'bg-white dark:bg-gray-800 text-red-600 dark:text-red-400 shadow-sm' 
                 : 'text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400'
             }`}
             onClick={() => setActiveTab('high')}
           >
-            რთული
+            Complex
           </button>
         </div>
       </div>
 
       <motion.div 
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+        className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6 md:gap-8"
         variants={container}
         initial="hidden"
         animate="show"
@@ -363,36 +394,38 @@ const SpecialNeeds: React.FC<SpecialNeedsProps> = ({
         {getFilteredFeatures().map((feature) => (
           <motion.div
             key={feature.id}
-            className={`rounded-xl overflow-hidden shadow-md cursor-pointer transition-all hover:-translate-y-1 ${
-              selectedFeatures.includes(feature.id) ? 'ring-2 ring-indigo-600 dark:ring-indigo-400 scale-[1.02]' : ''
+            className={`rounded-xl overflow-hidden shadow-lg cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${
+              selectedFeatures.includes(feature.id) 
+                ? 'ring-2 ring-indigo-600 dark:ring-indigo-400 scale-[1.02] bg-indigo-50/50 dark:bg-indigo-900/10' 
+                : 'hover:bg-gray-50 dark:hover:bg-gray-800/80 border border-gray-200 dark:border-gray-700'
             }`}
             onClick={() => toggleFeature(feature.id)}
             variants={item}
           >
-            <div className="h-32 bg-gray-50 dark:bg-gray-900 p-4">
+            <div className="h-12 sm:h-20 md:h-36 bg-gray-50 dark:bg-gray-900 p-1 sm:p-2 md:p-4 transition-colors duration-300">
               {getFeaturePreview(feature)}
             </div>
-            <div className="p-4 bg-white dark:bg-gray-800">
-              <div className="flex justify-between items-center mb-2">
-                <h3 className="font-medium text-gray-800 dark:text-white">{feature.name}</h3>
-                <span className={`text-xs px-2 py-1 rounded-full ${getComplexityColor(feature.complexity)}`}>
-                  {feature.complexity === 'low' && 'მარტივი'}
-                  {feature.complexity === 'medium' && 'საშუალო'}
-                  {feature.complexity === 'high' && 'რთული'}
+            <div className="p-2 sm:p-3 md:p-5 bg-white dark:bg-gray-800 transition-colors duration-300">
+              <div className="flex justify-between items-center mb-1 sm:mb-2">
+                <h3 className="font-semibold text-gray-800 dark:text-white text-[10px] sm:text-xs md:text-base truncate">{feature.name}</h3>
+                <span className={`text-[8px] sm:text-[10px] md:text-xs px-1 sm:px-1.5 md:px-2.5 py-0.5 rounded-full font-medium ${getComplexityColor(feature.complexity)}`}>
+                  {feature.complexity === 'low' && 'Simple'}
+                  {feature.complexity === 'medium' && 'Medium'}
+                  {feature.complexity === 'high' && 'Complex'}
                 </span>
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">{feature.description}</p>
+              <p className="text-[8px] sm:text-[10px] md:text-sm text-gray-600 dark:text-gray-300 mb-1 sm:mb-2 md:mb-4 mt-0.5 sm:mt-1 line-clamp-1 sm:line-clamp-2">{feature.description}</p>
               <div className="flex justify-between items-center">
                 <div className="text-indigo-600 dark:text-indigo-400">
-                  {getIconComponent(feature.icon)}
+                  <div className="scale-50 sm:scale-75 md:scale-100">{getIconComponent(feature.icon)}</div>
                 </div>
-                <div className={`w-5 h-5 rounded-full flex items-center justify-center ${
+                <div className={`w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center transition-all duration-300 ${
                   selectedFeatures.includes(feature.id) 
-                    ? 'bg-indigo-600 text-white' 
-                    : 'bg-gray-200 dark:bg-gray-700'
+                    ? 'bg-indigo-600 text-white scale-110' 
+                    : 'bg-gray-200 dark:bg-gray-700 hover:bg-indigo-100 dark:hover:bg-indigo-900/30'
                 }`}>
                   {selectedFeatures.includes(feature.id) && (
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>
                   )}
@@ -405,59 +438,77 @@ const SpecialNeeds: React.FC<SpecialNeedsProps> = ({
 
       {/* Selected features summary */}
       {selectedFeatures.length > 0 && (
-        <div className="mt-8 bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
-          <div className="p-4 bg-gray-100 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-600">
-            <h3 className="font-medium text-gray-800 dark:text-white">არჩეული ფუნქციები</h3>
+        <motion.div 
+          className="mt-6 sm:mt-8 md:mt-12 bg-white dark:bg-gray-800 rounded-lg sm:rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="p-2 sm:p-3 md:p-5 bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-900/30 dark:to-blue-900/30 border-b border-gray-200 dark:border-gray-600">
+            <h3 className="text-xs sm:text-sm md:text-base font-semibold text-gray-800 dark:text-white flex items-center">
+              <svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 mr-1 sm:mr-1.5 md:mr-2 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Selected Features ({selectedFeatures.length})
+            </h3>
           </div>
           
-          <div className="p-6">
-            <div className="flex flex-wrap gap-2">
+          <div className="p-2 sm:p-4 md:p-6">
+            <motion.div 
+              className="flex flex-wrap gap-1 sm:gap-1.5 md:gap-2"
+              initial="hidden"
+              animate="show"
+            >
               {selectedFeatures.map((featureId) => {
                 const feature = specialFeatures.find(f => f.id === featureId);
                 if (!feature) return null;
                 
                 return (
-                  <div 
+                  <motion.div 
                     key={featureId}
-                    className={`px-3 py-2 rounded-lg flex items-center ${getComplexityColor(feature.complexity)}`}
+                    className={`px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 md:py-2 rounded-md sm:rounded-lg flex items-center ${getComplexityColor(feature.complexity)} border border-transparent shadow-sm`}
+                    variants={selectedItem}
+                    layout
                   >
-                    <span className="mr-2">{feature.name}</span>
+                    <span className="mr-1 sm:mr-1.5 md:mr-2 text-[10px] sm:text-xs md:text-sm">{feature.name}</span>
                     <button 
-                      className="w-5 h-5 rounded-full bg-white/30 flex items-center justify-center"
+                      className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 rounded-full bg-white/30 flex items-center justify-center"
                       onClick={(e) => {
                         e.stopPropagation();
                         toggleFeature(featureId);
                       }}
                     >
-                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <svg className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                       </svg>
                     </button>
-                  </div>
+                  </motion.div>
                 );
               })}
-            </div>
+            </motion.div>
             
-            <div className="mt-4 p-4 bg-indigo-50 dark:bg-indigo-900/20 rounded-lg">
+            <div className="mt-3 sm:mt-4 md:mt-6 p-2 sm:p-3 md:p-5 bg-indigo-50 dark:bg-indigo-900/20 rounded-md sm:rounded-lg border border-indigo-100 dark:border-indigo-800/30 shadow-sm">
               <div className="flex items-start">
-                <svg className="w-6 h-6 text-indigo-600 dark:text-indigo-400 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 text-indigo-600 dark:text-indigo-400 mr-1 sm:mr-1.5 md:mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <p className="text-sm text-indigo-700 dark:text-indigo-300">
-                  თქვენ აირჩიეთ {selectedFeatures.length} ფუნქცია. 
+                <p className="text-[10px] sm:text-xs md:text-sm text-indigo-700 dark:text-indigo-300">
+                  You have selected {selectedFeatures.length} feature(s). 
                   {selectedFeatures.filter(id => specialFeatures.find(f => f.id === id)?.complexity === 'high').length > 0 && 
-                    ' ზოგიერთი არჩეული ფუნქცია რთულია და შეიძლება გავლენა იქონიოს პროექტის ვადებზე და ბიუჯეტზე.'}
+                    ' Some selected features are complex and may affect project timeline and budget.'}
                 </p>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       )}
 
-      <div className="mt-8 text-center">
-        <p className="text-sm text-gray-500 dark:text-gray-400">
-          სპეციალური ფუნქციების იდენტიფიცირება პროექტის დასაწყისშივე დაგვეხმარება უკეთესი დაგეგმვისა და განხორციელების პროცესში.
-        </p>
+      <div className="mt-6 sm:mt-8 md:mt-12 text-center max-w-2xl mx-auto">
+        <div className="p-3 sm:p-4 md:p-5 bg-gray-50 dark:bg-gray-800/50 rounded-lg sm:rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm">
+          <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">
+            <span className="font-medium text-indigo-600 dark:text-indigo-400">Pro tip:</span> Identifying special features at the beginning of the project will help us with better planning and implementation.
+          </p>
+        </div>
       </div>
     </div>
   );
