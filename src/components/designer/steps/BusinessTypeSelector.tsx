@@ -12,75 +12,75 @@ interface BusinessTypeSelectorProps {
 const businessTypes = [
   {
     id: 'restaurant',
-    title: 'რესტორანი/კაფე',
+    title: 'Restaurant/Cafe',
     image: '/images/business-types/restaurant.jpg',
-    description: 'სასადილო სივრცე, კულინარია, კაფე'
+    description: 'Dining space, culinary, cafe'
   },
   {
     id: 'retail',
-    title: 'საცალო მაღაზია',
+    title: 'Retail Store',
     image: '/images/business-types/retail.jpg',
-    description: 'თანამედროვე მაღაზიის ვიტრინა'
+    description: 'Modern store showcase'
   },
   {
     id: 'beauty',
-    title: 'სილამაზის სალონი',
+    title: 'Beauty Salon',
     image: '/images/business-types/beauty.jpg',
-    description: 'სტილიზებული სალონის ინტერიერი'
+    description: 'Stylized salon interior'
   },
   {
     id: 'professional',
-    title: 'პროფესიული მომსახურება',
+    title: 'Professional Services',
     image: '/images/business-types/professional.jpg',
-    description: 'საოფისე გარემო, კონსულტაციები'
+    description: 'Office environment, consultations'
   },
   {
     id: 'tech',
-    title: 'ტექნოლოგიები/სტარტაპი',
+    title: 'Technology/Startup',
     image: '/images/business-types/tech.jpg',
-    description: 'ინოვაციური სამუშაო სივრცე'
+    description: 'Innovative workspace'
   },
   {
     id: 'fitness',
-    title: 'ფიტნესი/ჯანმრთელობა',
+    title: 'Fitness/Health',
     image: '/images/business-types/fitness.jpg',
-    description: 'თანამედროვე ფიტნეს სივრცე'
+    description: 'Modern fitness space'
   },
   {
     id: 'education',
-    title: 'განათლება',
+    title: 'Education',
     image: '/images/business-types/education.jpg',
-    description: 'სასწავლო გარემო, კურსები'
+    description: 'Learning environment, courses'
   },
   {
     id: 'travel',
-    title: 'ტურიზმი/მოგზაურობა',
+    title: 'Tourism/Travel',
     image: '/images/business-types/travel.jpg',
-    description: 'ტურისტული სააგენტო, მოგზაურობის ბლოგი'
+    description: 'Travel agency, travel blog'
   },
   {
     id: 'event',
-    title: 'ღონისძიებები',
+    title: 'Events',
     image: '/images/business-types/event.jpg',
-    description: 'ღონისძიებების ორგანიზება, დაგეგმვა'
+    description: 'Event organization, planning'
   },
   {
     id: 'creative',
-    title: 'კრეატიული სტუდია',
+    title: 'Creative Studio',
     image: '/images/business-types/creative.jpg',
-    description: 'დიზაინი, ფოტოგრაფია, ხელოვნება'
+    description: 'Design, photography, art'
   },
   {
     id: 'realestate',
-    title: 'უძრავი ქონება',
+    title: 'Real Estate',
     image: '/images/business-types/realestate.jpg',
-    description: 'უძრავი ქონების სააგენტო, დეველოპერი'
+    description: 'Real estate agency, developer'
   },
   {
     id: 'nonprofit',
-    title: 'არაკომერციული ორგანიზაცია',
+    title: 'Non-profit Organization',
     image: '/images/business-types/nonprofit.jpg',
-    description: 'საქველმოქმედო, სოციალური პროექტები'
+    description: 'Charity, social projects'
   }
 ];
 
@@ -131,7 +131,7 @@ const BusinessTypeSelector: React.FC<BusinessTypeSelectorProps> = ({
   return (
     <div className="py-4">
       <p className="text-center text-gray-600 dark:text-gray-300 mb-8">
-        აირჩიეთ თქვენი ბიზნესის ან პროექტის ტიპი. ეს დაგვეხმარება შევქმნათ თქვენი საჭიროებების შესაბამისი დიზაინი.
+        Choose your business or project type. This will help us create a design that meets your needs.
       </p>
 
       <motion.div 
@@ -175,7 +175,7 @@ const BusinessTypeSelector: React.FC<BusinessTypeSelectorProps> = ({
 
       <div className="mt-8 text-center">
         <p className="text-sm text-gray-500 dark:text-gray-400">
-          არ ხედავთ თქვენს ბიზნესის ტიპს? აირჩიეთ ყველაზე მსგავსი კატეგორია, დეტალებს მოგვიანებით დავაზუსტებთ.
+          Don't see your business type? Choose the most similar category, we'll refine the details later.
         </p>
       </div>
     </div>

@@ -13,44 +13,44 @@ interface ContentPrioritiesProps {
 const contentSections = [
   {
     id: 'products',
-    name: 'პროდუქტები/სერვისები',
-    description: 'თქვენი პროდუქტების ან სერვისების დეტალური აღწერა',
+    name: 'Products/Services',
+    description: 'Detailed description of your products or services',
     icon: '📦'
   },
   {
     id: 'about',
-    name: 'კომპანიის შესახებ/ისტორია',
-    description: 'ინფორმაცია თქვენი ბიზნესის შესახებ და ისტორია',
+    name: 'About Company/History',
+    description: 'Information about your business and its history',
     icon: '🏢'
   },
   {
     id: 'team',
-    name: 'გუნდის წევრები',
-    description: 'თქვენი გუნდის წევრების წარდგენა',
+    name: 'Team Members',
+    description: 'Introduction of your team members',
     icon: '👥'
   },
   {
     id: 'testimonials',
-    name: 'კლიენტების შეფასებები',
-    description: 'კმაყოფილი კლიენტების გამოხმაურებები',
+    name: 'Client Testimonials',
+    description: 'Feedback from satisfied clients',
     icon: '⭐'
   },
   {
     id: 'blog',
-    name: 'ბლოგი/სიახლეები',
-    description: 'სტატიები, სიახლეები და განახლებები',
+    name: 'Blog/News',
+    description: 'Articles, news and updates',
     icon: '📰'
   },
   {
     id: 'contact',
-    name: 'საკონტაქტო ინფორმაცია',
-    description: 'როგორ დაგიკავშირდნენ თქვენ',
+    name: 'Contact Information',
+    description: 'How to reach you',
     icon: '📞'
   },
   {
     id: 'gallery',
-    name: 'გალერეა/პორტფოლიო',
-    description: 'თქვენი ნამუშევრების ან პროდუქტების ვიზუალური გამოფენა',
+    name: 'Gallery/Portfolio',
+    description: 'Visual showcase of your work or products',
     icon: '🖼️'
   }
 ];
@@ -117,23 +117,23 @@ const ContentPriorities: React.FC<ContentPrioritiesProps> = ({
   return (
     <div className="py-4">
       <p className="text-center text-gray-600 dark:text-gray-300 mb-8">
-        დაალაგეთ კონტენტის სექციები მნიშვნელობის მიხედვით. გადაათრიეთ ელემენტები სასურველი თანმიმდევრობით.
+        Arrange content sections by importance. Sections placed at the top will be in more prominent positions on your website.
       </p>
 
       <div className="max-w-xl mx-auto">
         <div className="bg-gray-50 dark:bg-gray-900 p-4 rounded-lg mb-6">
-          <h3 className="text-lg font-medium text-gray-800 dark:text-white mb-2">როგორ გამოვიყენოთ:</h3>
+          <h3 className="text-lg font-medium text-gray-800 dark:text-white mb-2">How to use:</h3>
           <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">
-            1. გადაათრიეთ ელემენტები ზემოთ ან ქვემოთ პრიორიტეტის შესაცვლელად
+            1. Drag and drop elements up or down to change priority
           </p>
           <p className="text-sm text-gray-600 dark:text-gray-300">
-            2. ყველაზე მაღალი პრიორიტეტის ელემენტები გამოჩნდება თქვენი საიტის თავში
+            2. Content placed at the top position is more important
           </p>
         </div>
 
         <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
           <div className="p-4 bg-gray-100 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-600">
-            <h3 className="font-medium text-gray-800 dark:text-white">კონტენტის პრიორიტეტები</h3>
+            <h3 className="font-medium text-gray-800 dark:text-white">Content Priorities</h3>
           </div>
           
           <ul className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -181,7 +181,7 @@ const ContentPriorities: React.FC<ContentPrioritiesProps> = ({
         {/* Visual preview of content order */}
         <div className="mt-8 bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
           <div className="p-4 bg-gray-100 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-600">
-            <h3 className="font-medium text-gray-800 dark:text-white">ვიზუალური წინასწარი ხედვა</h3>
+            <h3 className="font-medium text-gray-800 dark:text-white">Visual Preview</h3>
           </div>
           
           <div className="p-4">
@@ -210,7 +210,7 @@ const ContentPriorities: React.FC<ContentPrioritiesProps> = ({
 
       <div className="mt-8 text-center">
         <p className="text-sm text-gray-500 dark:text-gray-400">
-          კონტენტის პრიორიტეტების განსაზღვრა დაგეხმარებათ მომხმარებლებს ადვილად მიაწოდოთ ყველაზე მნიშვნელოვანი ინფორმაცია.
+          Defining content priorities will help you easily deliver the most important information to users.
         </p>
       </div>
     </div>

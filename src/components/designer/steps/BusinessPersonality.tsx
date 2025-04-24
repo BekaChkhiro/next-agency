@@ -12,33 +12,33 @@ interface BusinessPersonalityProps {
 const personalityTypes = [
   {
     id: 'modern',
-    title: 'თანამედროვე და მინიმალისტური',
-    description: 'სუფთა ხაზები, დიდი სივრცე, მინიმალისტური დიზაინი',
-    elements: ['სუფთა ხაზები', 'თეთრი სივრცე', 'მინიმალისტური', 'გეომეტრიული ფორმები']
+    title: 'Modern and Minimalist',
+    description: 'Clean lines, ample space, minimalist design',
+    elements: ['Clean lines', 'White space', 'Minimalist', 'Geometric shapes']
   },
   {
     id: 'friendly',
-    title: 'მეგობრული და თბილი',
-    description: 'ღია ფერები, მომრგვალებული ფორმები, მეგობრული ტონი',
-    elements: ['ღია ფერები', 'მომრგვალებული ფორმები', 'თბილი ტონები', 'ხალისიანი ელემენტები']
+    title: 'Friendly and Warm',
+    description: 'Light colors, rounded shapes, friendly tone',
+    elements: ['Light colors', 'Rounded shapes', 'Warm tones', 'Playful elements']
   },
   {
     id: 'luxury',
-    title: 'ლუქსი და ელეგანტურობა',
-    description: 'მდიდრული დეტალები, მუქი ტონები, პრემიუმ გამოცდილება',
-    elements: ['მდიდრული დეტალები', 'მუქი ტონები', 'ოქროს ან ვერცხლის აქცენტები', 'ელეგანტური შრიფტები']
+    title: 'Luxury and Elegance',
+    description: 'Rich details, dark tones, premium experience',
+    elements: ['Rich details', 'Dark tones', 'Gold or silver accents', 'Elegant fonts']
   },
   {
     id: 'creative',
-    title: 'კრეატიული და ენერგიული',
-    description: 'ცოცხალი ფერები, უჩვეულო ფორმები, ინოვაციური ელემენტები',
-    elements: ['ცოცხალი ფერები', 'უჩვეულო ფორმები', 'მოულოდნელი ელემენტები', 'თამამი დიზაინი']
+    title: 'Creative and Energetic',
+    description: 'Vibrant colors, unusual shapes, innovative elements',
+    elements: ['Vibrant colors', 'Unusual shapes', 'Unexpected elements', 'Bold design']
   },
   {
     id: 'traditional',
-    title: 'ტრადიციული და სანდო',
-    description: 'კლასიკური ელემენტები, ტრადიციული ფერები, სანდო შთაბეჭდილება',
-    elements: ['კლასიკური ელემენტები', 'ტრადიციული ფერები', 'სიმეტრიული განლაგება', 'ისტორიული მოტივები']
+    title: 'Traditional and Trustworthy',
+    description: 'Classic elements, traditional colors, trustworthy impression',
+    elements: ['Classic elements', 'Traditional colors', 'Symmetrical layout', 'Historical motifs']
   }
 ];
 
@@ -94,7 +94,7 @@ const BusinessPersonality: React.FC<BusinessPersonalityProps> = ({
   return (
     <div className="py-4">
       <p className="text-center text-gray-600 dark:text-gray-300 mb-8">
-        აირჩიეთ თქვენი ბრენდის პერსონალობა. ეს განსაზღვრავს თქვენი ვებგვერდის ვიზუალურ და ემოციურ ტონს.
+        Choose your brand personality. This will define the visual and emotional tone of your website.
       </p>
 
       <motion.div 
@@ -138,7 +138,7 @@ const BusinessPersonality: React.FC<BusinessPersonalityProps> = ({
 
       <div className="mt-8 text-center">
         <p className="text-sm text-gray-500 dark:text-gray-400">
-          თქვენი ბრენდის პერსონალობა განსაზღვრავს როგორ აღიქვამენ მომხმარებლები თქვენს ბიზნესს. აირჩიეთ ის, რომელიც საუკეთესოდ ასახავს თქვენს ღირებულებებს.
+          Your brand personality determines how users perceive your business. Choose the one that best reflects your values.
         </p>
       </div>
     </div>

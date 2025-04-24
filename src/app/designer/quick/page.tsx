@@ -4,8 +4,8 @@ import DesignerNavigation from '@/components/designer/DesignerNavigation';
 import DesignerStepper from '@/components/designer/DesignerStepper';
 
 export const metadata: Metadata = {
-  title: 'სწრაფი ვებგვერდის დიზაინერი',
-  description: 'შექმენით თქვენი ვებგვერდი სწრაფად და მარტივად',
+  title: 'Quick Website Designer',
+  description: 'Create your website quickly and easily',
 };
 
 export default function QuickDesignerPage() {
@@ -14,10 +14,10 @@ export default function QuickDesignerPage() {
       <DesignerNavigation />
       <main className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-white">
-          სწრაფი ვებგვერდის დიზაინერი
+          Quick Website Designer
         </h1>
         <p className="text-center text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
-          გაიარეთ მარტივი ნაბიჯები თქვენი ვებგვერდის შესაქმნელად. ეს პროცესი დაახლოებით 5-7 წუთს წაიღებს.
+          Follow simple steps to create your website. This process will take approximately 5-7 minutes.
         </p>
         
         <DesignerStepper isQuickVersion={true} />

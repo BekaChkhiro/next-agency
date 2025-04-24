@@ -44,28 +44,28 @@ const DesignerStepper: React.FC<DesignerStepperProps> = ({ isQuickVersion }) => 
   // Define steps based on version
   const steps = isQuickVersion 
     ? [
-        { id: 'businessType', title: 'ბიზნესის ტიპი', component: BusinessTypeSelector },
-        { id: 'businessPersonality', title: 'ბიზნესის პერსონალობა', component: BusinessPersonality },
-        { id: 'visualStyle', title: 'ვიზუალური სტილი', component: VisualStyleDesigner },
-        { id: 'layoutArchitecture', title: 'განლაგების არქიტექტურა', component: LayoutArchitecture },
-        { id: 'contentPriorities', title: 'კონტენტის პრიორიტეტები', component: ContentPriorities },
-        { id: 'resultsBoard', title: 'შედეგების დაფა', component: ResultsBoard },
-        { id: 'meetingScheduler', title: 'შეხვედრის დაგეგმვა', component: MeetingScheduler }
+        { id: 'businessType', title: 'Business Type', component: BusinessTypeSelector },
+        { id: 'businessPersonality', title: 'Business Personality', component: BusinessPersonality },
+        { id: 'visualStyle', title: 'Visual Style', component: VisualStyleDesigner },
+        { id: 'layoutArchitecture', title: 'Layout Architecture', component: LayoutArchitecture },
+        { id: 'contentPriorities', title: 'Content Priorities', component: ContentPriorities },
+        { id: 'resultsBoard', title: 'Results Board', component: ResultsBoard },
+        { id: 'meetingScheduler', title: 'Meeting Scheduler', component: MeetingScheduler }
       ]
     : [
-        { id: 'businessType', title: 'ბიზნესის ტიპი', component: BusinessTypeSelector },
-        { id: 'businessPersonality', title: 'ბიზნესის პერსონალობა', component: BusinessPersonality },
-        { id: 'visualStyle', title: 'ვიზუალური სტილი', component: VisualStyleDesigner },
-        { id: 'layoutArchitecture', title: 'განლაგების არქიტექტურა', component: LayoutArchitecture },
-        { id: 'contentPriorities', title: 'კონტენტის პრიორიტეტები', component: ContentPriorities },
-        { id: 'interactiveFeatures', title: 'ინტერაქტიული ფუნქციები', component: InteractiveFeatures },
-        { id: 'mobileExperience', title: 'მობილური გამოცდილება', component: MobileExperience },
-        { id: 'userJourneyMap', title: 'მომხმარებლის მოგზაურობის რუკა', component: UserJourneyMap },
-        { id: 'exampleGallery', title: 'მაგალითების გალერეა', component: ExampleGallery },
-        { id: 'threeDMockup', title: '3D მაკეტი', component: ThreeDMockup },
-        { id: 'specialNeeds', title: 'სპეციალური საჭიროებები', component: SpecialNeeds },
-        { id: 'resultsBoard', title: 'შედეგების დაფა', component: ResultsBoard },
-        { id: 'meetingScheduler', title: 'შეხვედრის დაგეგმვა', component: MeetingScheduler }
+        { id: 'businessType', title: 'Business Type', component: BusinessTypeSelector },
+        { id: 'businessPersonality', title: 'Business Personality', component: BusinessPersonality },
+        { id: 'visualStyle', title: 'Visual Style', component: VisualStyleDesigner },
+        { id: 'layoutArchitecture', title: 'Layout Architecture', component: LayoutArchitecture },
+        { id: 'contentPriorities', title: 'Content Priorities', component: ContentPriorities },
+        { id: 'interactiveFeatures', title: 'Interactive Features', component: InteractiveFeatures },
+        { id: 'mobileExperience', title: 'Mobile Experience', component: MobileExperience },
+        { id: 'userJourneyMap', title: 'User Journey Map', component: UserJourneyMap },
+        { id: 'exampleGallery', title: 'Example Gallery', component: ExampleGallery },
+        { id: 'threeDMockup', title: '3D Mockup', component: ThreeDMockup },
+        { id: 'specialNeeds', title: 'Special Needs', component: SpecialNeeds },
+        { id: 'resultsBoard', title: 'Results Board', component: ResultsBoard },
+        { id: 'meetingScheduler', title: 'Meeting Scheduler', component: MeetingScheduler }
       ];
 
   const handleNext = () => {
@@ -97,10 +97,10 @@ const DesignerStepper: React.FC<DesignerStepperProps> = ({ isQuickVersion }) => 
       <div className="mb-12">
         <div className="flex justify-between mb-2">
           <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
-            ნაბიჯი {currentStep + 1} / {steps.length}
+            Step {currentStep + 1} / {steps.length}
           </span>
           <span className="text-sm font-medium text-indigo-600 dark:text-indigo-400">
-            {Math.round(((currentStep + 1) / steps.length) * 100)}% დასრულებული
+            {Math.round(((currentStep + 1) / steps.length) * 100)}% Complete
           </span>
         </div>
         <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
@@ -154,7 +154,7 @@ const DesignerStepper: React.FC<DesignerStepperProps> = ({ isQuickVersion }) => 
           whileHover={currentStep !== 0 ? { scale: 1.05 } : {}}
           whileTap={currentStep !== 0 ? { scale: 0.95 } : {}}
         >
-          უკან
+          Back
         </MotionButton>
         
         <MotionButton
@@ -167,7 +167,7 @@ const DesignerStepper: React.FC<DesignerStepperProps> = ({ isQuickVersion }) => 
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          {currentStep === steps.length - 1 ? 'დასრულება' : 'შემდეგი'}
+          {currentStep === steps.length - 1 ? 'Finish' : 'Next'}
         </MotionButton>
       </div>
     </div>

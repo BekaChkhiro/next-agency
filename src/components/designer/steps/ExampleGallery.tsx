@@ -14,81 +14,81 @@ const exampleWebsites = {
   restaurant: [
     {
       id: 'restaurant1',
-      name: 'გურმანი',
-      description: 'თანამედროვე რესტორნის ვებგვერდი მენიუთი და ჯავშნის ფუნქციით',
+      name: 'Gourmet',
+      description: 'Modern restaurant website with menu and reservation functionality',
       image: '/images/examples/restaurant1.jpg',
-      features: ['მენიუ', 'ჯავშანი', 'გალერეა', 'კონტაქტი']
+      features: ['Menu', 'Reservations', 'Gallery', 'Contact']
     },
     {
       id: 'restaurant2',
-      name: 'ტრადიციული სამზარეულო',
-      description: 'ტრადიციული რესტორნის ვებგვერდი ისტორიით და სპეციალური შეთავაზებებით',
+      name: 'Traditional Cuisine',
+      description: 'Traditional restaurant website with history and special offers',
       image: '/images/examples/restaurant2.jpg',
-      features: ['მენიუ', 'ისტორია', 'შეთავაზებები', 'მიმოხილვები']
+      features: ['Menu', 'History', 'Offers', 'Reviews']
     }
   ],
   retail: [
     {
       id: 'retail1',
-      name: 'მოდის სახლი',
-      description: 'თანამედროვე ონლაინ მაღაზია ტანსაცმლისთვის',
+      name: 'Fashion House',
+      description: 'Modern online store for clothing',
       image: '/images/examples/retail1.jpg',
-      features: ['პროდუქტების კატალოგი', 'კალათა', 'გადახდა', 'ფილტრები']
+      features: ['Product catalog', 'Cart', 'Checkout', 'Filters']
     },
     {
       id: 'retail2',
-      name: 'ტექნიკის სამყარო',
-      description: 'ელექტრონიკის მაღაზია დეტალური პროდუქტის აღწერით',
+      name: 'Tech World',
+      description: 'Electronics store with detailed product descriptions',
       image: '/images/examples/retail2.jpg',
-      features: ['პროდუქტების შედარება', 'მიმოხილვები', 'ტექნიკური სპეციფიკაციები', 'კალათა']
+      features: ['Product comparison', 'Reviews', 'Technical specifications', 'Cart']
     }
   ],
   beauty: [
     {
       id: 'beauty1',
-      name: 'სილამაზის ოაზისი',
-      description: 'სილამაზის სალონის ვებგვერდი სერვისების ჩამონათვალით',
+      name: 'Beauty Oasis',
+      description: 'Beauty salon website with service listings',
       image: '/images/examples/beauty1.jpg',
-      features: ['სერვისები', 'ჯავშანი', 'გალერეა', 'სპეციალისტები']
+      features: ['Services', 'Booking', 'Gallery', 'Specialists']
     },
     {
       id: 'beauty2',
-      name: 'ესთეტიკის ცენტრი',
-      description: 'ესთეტიკური პროცედურების ცენტრის ვებგვერდი',
+      name: 'Aesthetics Center',
+      description: 'Aesthetic procedures center website',
       image: '/images/examples/beauty2.jpg',
-      features: ['პროცედურები', 'შედეგები', 'ჯავშანი', 'ბლოგი']
+      features: ['Procedures', 'Results', 'Booking', 'Blog']
     }
   ],
   professional: [
     {
       id: 'professional1',
-      name: 'იურიდიული მრჩეველი',
-      description: 'იურიდიული ფირმის პროფესიონალური ვებგვერდი',
+      name: 'Legal Advisor',
+      description: 'Professional law firm website',
       image: '/images/examples/professional1.jpg',
-      features: ['სერვისები', 'გუნდი', 'კლიენტები', 'კონტაქტი']
+      features: ['Services', 'Team', 'Clients', 'Contact']
     },
     {
       id: 'professional2',
-      name: 'ფინანსური მრჩეველი',
-      description: 'ფინანსური კონსულტაციის ვებგვერდი',
+      name: 'Financial Advisor',
+      description: 'Financial consultation website',
       image: '/images/examples/professional2.jpg',
-      features: ['სერვისები', 'კალკულატორები', 'შეხვედრის დაჯავშნა', 'ბლოგი']
+      features: ['Services', 'Calculators', 'Meeting booking', 'Blog']
     }
   ],
   tech: [
     {
       id: 'tech1',
-      name: 'ინოვაციური სტარტაპი',
-      description: 'ტექნოლოგიური სტარტაპის თანამედროვე ვებგვერდი',
+      name: 'Innovative Startup',
+      description: 'Modern technology startup website',
       image: '/images/examples/tech1.jpg',
-      features: ['პროდუქტი', 'ფუნქციები', 'ფასები', 'დემო']
+      features: ['Product', 'Features', 'Pricing', 'Demo']
     },
     {
       id: 'tech2',
-      name: 'პროგრამული უზრუნველყოფა',
-      description: 'პროგრამული უზრუნველყოფის კომპანიის ვებგვერდი',
+      name: 'Software Solutions',
+      description: 'Software company website',
       image: '/images/examples/tech2.jpg',
-      features: ['პროდუქტები', 'დოკუმენტაცია', 'მხარდაჭერა', 'ფასები']
+      features: ['Products', 'Documentation', 'Support', 'Pricing']
     }
   ]
 };
@@ -97,17 +97,17 @@ const exampleWebsites = {
 const defaultExamples = [
   {
     id: 'default1',
-    name: 'ბიზნეს შაბლონი',
-    description: 'უნივერსალური ბიზნეს ვებგვერდის შაბლონი',
+    name: 'Business Template',
+    description: 'Universal business website template',
     image: '/images/examples/default1.jpg',
-    features: ['მთავარი გვერდი', 'სერვისები', 'შესახებ', 'კონტაქტი']
+    features: ['Home page', 'Services', 'About', 'Contact']
   },
   {
     id: 'default2',
-    name: 'პორტფოლიო შაბლონი',
-    description: 'პროფესიონალური პორტფოლიოს ვებგვერდი',
+    name: 'Portfolio Template',
+    description: 'Professional portfolio website',
     image: '/images/examples/default2.jpg',
-    features: ['პროექტები', 'უნარები', 'გამოცდილება', 'კონტაქტი']
+    features: ['Projects', 'Skills', 'Experience', 'Contact']
   }
 ];
 
@@ -305,7 +305,7 @@ const ExampleGallery: React.FC<ExampleGalleryProps> = ({
               </div>
               <div className="p-4 bg-white dark:bg-gray-800">
                 <div className="flex justify-between items-center mb-3">
-                  <h3 className="font-medium text-gray-800 dark:text-white">მთავარი ელემენტები</h3>
+                  <h3 className="font-medium text-gray-800 dark:text-white">Main Elements</h3>
                   <button 
                     className={`w-8 h-8 rounded-full flex items-center justify-center ${
                       likedExamples.includes(example.id)
@@ -353,7 +353,7 @@ const ExampleGallery: React.FC<ExampleGalleryProps> = ({
       {likedExamples.length > 0 && !activeExample && (
         <div className="mt-8 bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
           <div className="p-4 bg-gray-100 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-600">
-            <h3 className="font-medium text-gray-800 dark:text-white">მონიშნული მაგალითები</h3>
+            <h3 className="font-medium text-gray-800 dark:text-white">Marked Examples</h3>
           </div>
           
           <div className="p-6">
@@ -396,8 +396,8 @@ const ExampleGallery: React.FC<ExampleGalleryProps> = ({
 
       <div className="mt-8 text-center">
         <p className="text-sm text-gray-500 dark:text-gray-400">
-          მაგალითების დათვალიერება გეხმარებათ უკეთესი წარმოდგენა შეიქმნათ, თუ როგორი იქნება თქვენი საიტი. 
-          მონიშნული ელემენტები გამოყენებული იქნება თქვენი დიზაინის შესაქმნელად.
+          Browsing examples helps you get a better idea of what your site will look like. 
+          Marked elements will be used to create your design.
         </p>
       </div>
     </div>

@@ -11,26 +11,26 @@ interface LayoutArchitectureProps {
 const layoutTypes = [
   {
     id: 'classic',
-    name: 'კლასიკური',
-    description: 'მენიუ ზემოთ, ჰეროს სექცია, სტანდარტული განლაგება',
+    name: 'Classic',
+    description: 'Menu at the top, hero section, standard layout',
     preview: 'bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20'
   },
   {
     id: 'onepage',
-    name: 'თანამედროვე ერთგვერდიანი',
-    description: 'გრძელი ერთი გვერდი სექციებით, გლუვი გადასვლებით',
+    name: 'Modern One-Page',
+    description: 'Long single page with sections, smooth transitions',
     preview: 'bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20'
   },
   {
     id: 'portfolio',
-    name: 'მრავალსვეტიანი პორტფოლიო',
-    description: 'გრიდზე დაფუძნებული განლაგება ვიზუალური კონტენტისთვის',
+    name: 'Multi-Column Portfolio',
+    description: 'Grid-based layout for visual content',
     preview: 'bg-gradient-to-r from-amber-50 to-yellow-50 dark:from-amber-900/20 dark:to-yellow-900/20'
   },
   {
     id: 'ecommerce',
-    name: 'პროდუქტზე ორიენტირებული მაღაზია',
-    description: 'პროდუქტების გამოსაჩენად ოპტიმიზირებული განლაგება',
+    name: 'Product-Oriented Store',
+    description: 'Layout optimized for showcasing products',
     preview: 'bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20'
   }
 ];
@@ -39,32 +39,32 @@ const layoutTypes = [
 const navigationStyles = [
   {
     id: 'horizontal',
-    name: 'ჰორიზონტალური მენიუ',
-    description: 'კლასიკური ჰორიზონტალური ნავიგაცია ზედა ნაწილში',
+    name: 'Horizontal Menu',
+    description: 'Classic horizontal navigation at the top',
     preview: 'bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700'
   },
   {
     id: 'vertical',
-    name: 'ვერტიკალური მენიუ',
-    description: 'გვერდითი ნავიგაცია მარცხენა ან მარჯვენა მხარეს',
+    name: 'Vertical Menu',
+    description: 'Side navigation on the left or right side',
     preview: 'bg-gradient-to-r from-indigo-50 to-indigo-100 dark:from-indigo-900/30 dark:to-indigo-800/30'
   },
   {
     id: 'hamburger',
-    name: 'ჰამბურგერის მენიუ',
-    description: 'დამალული მენიუ, რომელიც იხსნება ღილაკზე დაჭერით',
+    name: 'Hamburger Menu',
+    description: 'Hidden menu that opens when clicking a button',
     preview: 'bg-gradient-to-r from-violet-50 to-violet-100 dark:from-violet-900/30 dark:to-violet-800/30'
   },
   {
     id: 'mega',
-    name: 'მეგა-მენიუ',
-    description: 'გაფართოებული ჩამოსაშლელი მენიუ მრავალი ვარიანტით',
+    name: 'Mega Menu',
+    description: 'Expanded dropdown menu with multiple options',
     preview: 'bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30'
   },
   {
     id: 'simple',
-    name: 'მარტივი ჩამოსაშლელი',
-    description: 'ტრადიციული ჩამოსაშლელი მენიუ ქვეკატეგორიებით',
+    name: 'Simple Dropdown',
+    description: 'Traditional dropdown menu with subcategories',
     preview: 'bg-gradient-to-r from-teal-50 to-teal-100 dark:from-teal-900/30 dark:to-teal-800/30'
   }
 ];
@@ -316,7 +316,7 @@ const LayoutArchitecture: React.FC<LayoutArchitectureProps> = ({
                       ease: "easeInOut" 
                     }}
                   >
-                    <span className="text-xs text-gray-500 dark:text-gray-400">3D ანიმირებული მაკეტი</span>
+                    <span className="text-xs text-gray-500 dark:text-gray-400">3D Animated Mockup</span>
                   </motion.div>
                 </div>
               </motion.div>
@@ -329,7 +329,7 @@ const LayoutArchitecture: React.FC<LayoutArchitectureProps> = ({
       {activeTab === 'navigation' && (
         <div>
           <p className="text-center text-gray-600 dark:text-gray-300 mb-8">
-            აირჩიეთ თქვენი ვებგვერდის ნავიგაციის სტილი.
+            Choose your website's navigation style.
           </p>
           
           <motion.div 
@@ -380,7 +380,7 @@ const LayoutArchitecture: React.FC<LayoutArchitectureProps> = ({
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                       )}
-                      <span className="text-xs text-gray-500 dark:text-gray-400">ინტერაქტიული დემონსტრაცია</span>
+                      <span className="text-xs text-gray-500 dark:text-gray-400">Interactive Demo</span>
                     </motion.div>
                   </motion.div>
                 </div>
@@ -392,7 +392,7 @@ const LayoutArchitecture: React.FC<LayoutArchitectureProps> = ({
 
       <div className="mt-8 text-center">
         <p className="text-sm text-gray-500 dark:text-gray-400">
-          განლაგების არქიტექტურა განსაზღვრავს თქვენი ვებგვერდის სტრუქტურას და მომხმარებლის გამოცდილებას.
+          Layout architecture defines your website's structure and user experience.
         </p>
       </div>
     </div>

@@ -11,49 +11,49 @@ interface VisualStyleDesignerProps {
 const colorPalettes = [
   {
     id: 'modern-blue',
-    name: 'თანამედროვე ლურჯი',
+    name: 'Modern Blue',
     colors: ['#0F172A', '#1E293B', '#3B82F6', '#BFDBFE', '#FFFFFF'],
     preview: 'from-blue-600 to-indigo-700'
   },
   {
     id: 'warm-sunset',
-    name: 'თბილი მზის ჩასვლა',
+    name: 'Warm Sunset',
     colors: ['#7C2D12', '#C2410C', '#FB923C', '#FFEDD5', '#FFFFFF'],
     preview: 'from-orange-500 to-amber-600'
   },
   {
     id: 'forest-green',
-    name: 'ტყის მწვანე',
+    name: 'Forest Green',
     colors: ['#14532D', '#15803D', '#4ADE80', '#DCFCE7', '#FFFFFF'],
     preview: 'from-green-600 to-emerald-700'
   },
   {
     id: 'elegant-purple',
-    name: 'ელეგანტური იისფერი',
+    name: 'Elegant Purple',
     colors: ['#581C87', '#7E22CE', '#C084FC', '#F3E8FF', '#FFFFFF'],
     preview: 'from-purple-600 to-violet-700'
   },
   {
     id: 'ocean-teal',
-    name: 'ოკეანის ფირუზი',
+    name: 'Ocean Teal',
     colors: ['#134E4A', '#0F766E', '#2DD4BF', '#CCFBF1', '#FFFFFF'],
     preview: 'from-teal-600 to-cyan-700'
   },
   {
     id: 'coral-pink',
-    name: 'მარჯნის ვარდისფერი',
+    name: 'Coral Pink',
     colors: ['#831843', '#BE185D', '#FB7185', '#FCE7F3', '#FFFFFF'],
     preview: 'from-pink-600 to-rose-700'
   },
   {
     id: 'classic-gray',
-    name: 'კლასიკური ნაცრისფერი',
+    name: 'Classic Gray',
     colors: ['#1F2937', '#4B5563', '#9CA3AF', '#F3F4F6', '#FFFFFF'],
     preview: 'from-gray-600 to-gray-700'
   },
   {
     id: 'vibrant-rainbow',
-    name: 'ცოცხალი ცისარტყელა',
+    name: 'Vibrant Rainbow',
     colors: ['#6D28D9', '#DB2777', '#F59E0B', '#10B981', '#FFFFFF'],
     preview: 'from-indigo-600 via-pink-500 to-yellow-500'
   }
@@ -63,42 +63,42 @@ const colorPalettes = [
 const fontPairs = [
   {
     id: 'modern-sans',
-    name: 'თანამედროვე Sans-Serif',
+    name: 'Modern Sans-Serif',
     heading: 'Inter',
     body: 'Roboto',
     preview: 'font-sans'
   },
   {
     id: 'elegant-serif',
-    name: 'ელეგანტური Serif',
+    name: 'Elegant Serif',
     heading: 'Playfair Display',
     body: 'Source Serif Pro',
     preview: 'font-serif'
   },
   {
     id: 'creative-mix',
-    name: 'კრეატიული მიქსი',
+    name: 'Creative Mix',
     heading: 'Poppins',
     body: 'Lora',
     preview: 'font-sans'
   },
   {
     id: 'professional-clean',
-    name: 'პროფესიული და სუფთა',
+    name: 'Professional and Clean',
     heading: 'Montserrat',
     body: 'Open Sans',
     preview: 'font-sans'
   },
   {
     id: 'friendly-rounded',
-    name: 'მეგობრული მომრგვალებული',
+    name: 'Friendly Rounded',
     heading: 'Quicksand',
     body: 'Nunito',
     preview: 'font-sans'
   },
   {
     id: 'tech-geometric',
-    name: 'ტექნოლოგიური გეომეტრიული',
+    name: 'Tech Geometric',
     heading: 'Space Grotesk',
     body: 'DM Sans',
     preview: 'font-sans'
@@ -109,32 +109,32 @@ const fontPairs = [
 const photoStyles = [
   {
     id: 'documentary',
-    name: 'დოკუმენტური/რეალისტური',
-    description: 'ბუნებრივი, აუთენტური ფოტოები რეალური სიტუაციებიდან',
+    name: 'Documentary/Realistic',
+    description: 'Natural, authentic photos from real situations',
     preview: 'bg-gradient-to-r from-neutral-200 to-neutral-300 dark:from-neutral-800 dark:to-neutral-700'
   },
   {
     id: 'artistic',
-    name: 'სტილიზებული/მხატვრული',
-    description: 'კრეატიული, მხატვრული ფოტოები უნიკალური პერსპექტივით',
+    name: 'Stylized/Artistic',
+    description: 'Creative, artistic photos with unique perspective',
     preview: 'bg-gradient-to-r from-purple-200 to-pink-200 dark:from-purple-900 dark:to-pink-900'
   },
   {
     id: 'minimalist',
-    name: 'მინიმალისტური',
-    description: 'სუფთა, მარტივი ფოტოები მინიმალური დეტალებით',
+    name: 'Minimalist',
+    description: 'Clean, simple photos with minimal details',
     preview: 'bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700'
   },
   {
     id: 'vibrant',
-    name: 'ცოცხალი და ფერადი',
-    description: 'მკვეთრი, ცოცხალი ფერებით გაჯერებული ფოტოები',
+    name: 'Vibrant Colorful',
+    description: 'Bright, vibrant colored photos with energetic mood',
     preview: 'bg-gradient-to-r from-yellow-200 via-green-200 to-blue-200 dark:from-yellow-900 dark:via-green-900 dark:to-blue-900'
   },
   {
     id: 'professional',
-    name: 'პროფესიული/კორპორატიული',
-    description: 'პროფესიული, მაღალი ხარისხის ბიზნეს-ორიენტირებული ფოტოები',
+    name: 'Professional/Corporate',
+    description: 'Professional, high-quality business-oriented photos',
     preview: 'bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-blue-900 dark:to-indigo-900'
   }
 ];
@@ -185,7 +185,7 @@ const VisualStyleDesigner: React.FC<VisualStyleDesignerProps> = ({
             }`}
             onClick={() => setActiveTab('colors')}
           >
-            ფერები
+            Colors
           </button>
           <button
             className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
@@ -195,7 +195,7 @@ const VisualStyleDesigner: React.FC<VisualStyleDesignerProps> = ({
             }`}
             onClick={() => setActiveTab('fonts')}
           >
-            შრიფტები
+            Fonts
           </button>
           <button
             className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
@@ -205,7 +205,7 @@ const VisualStyleDesigner: React.FC<VisualStyleDesignerProps> = ({
             }`}
             onClick={() => setActiveTab('photos')}
           >
-            ფოტო სტილი
+            Photos
           </button>
         </div>
       </div>
@@ -214,7 +214,7 @@ const VisualStyleDesigner: React.FC<VisualStyleDesignerProps> = ({
       {activeTab === 'colors' && (
         <div>
           <p className="text-center text-gray-600 dark:text-gray-300 mb-8">
-            აირჩიეთ ფერთა პალიტრა, რომელიც საუკეთესოდ ასახავს თქვენი ბრენდის პერსონალობას.
+            Choose a color palette that best reflects your brand's personality.
           </p>
           
           <motion.div 
@@ -275,7 +275,7 @@ const VisualStyleDesigner: React.FC<VisualStyleDesignerProps> = ({
       {activeTab === 'fonts' && (
         <div>
           <p className="text-center text-gray-600 dark:text-gray-300 mb-8">
-            აირჩიეთ შრიფტების კომბინაცია, რომელიც საუკეთესოდ ასახავს თქვენი ბრენდის ხასიათს.
+            Choose a font combination that best reflects your brand's character.
           </p>
           
           <motion.div 
@@ -310,9 +310,9 @@ const VisualStyleDesigner: React.FC<VisualStyleDesignerProps> = ({
                 {/* Preview of the font pair on a website element */}
                 <div className="p-4 bg-gray-50 dark:bg-gray-900">
                   <div className="w-full bg-white dark:bg-gray-800 rounded-lg p-3 shadow-sm">
-                    <div className={`text-lg font-bold mb-2 ${pair.preview}`}>სათაურის მაგალითი</div>
+                    <div className={`text-lg font-bold mb-2 ${pair.preview}`}>Heading Example</div>
                     <div className={`text-sm text-gray-600 dark:text-gray-300 ${pair.preview}`}>
-                      ეს არის ძირითადი ტექსტის მაგალითი, რომელიც აჩვენებს როგორ გამოიყურება თქვენი არჩეული შრიფტი რეალურ კონტექსტში.
+                      This is a body text example that shows how your chosen font looks in a real context.
                     </div>
                   </div>
                 </div>
@@ -326,7 +326,7 @@ const VisualStyleDesigner: React.FC<VisualStyleDesignerProps> = ({
       {activeTab === 'photos' && (
         <div>
           <p className="text-center text-gray-600 dark:text-gray-300 mb-8">
-            აირჩიეთ ფოტო სტილი, რომელიც საუკეთესოდ წარმოაჩენს თქვენს ბრენდს და პროდუქტებს.
+            Choose a photo style that best showcases your brand and products.
           </p>
           
           <motion.div 
@@ -386,7 +386,7 @@ const VisualStyleDesigner: React.FC<VisualStyleDesignerProps> = ({
 
       <div className="mt-8 text-center">
         <p className="text-sm text-gray-500 dark:text-gray-400">
-          ვიზუალური სტილი განსაზღვრავს თქვენი ვებგვერდის მთლიან ესთეტიკას. შეგიძლიათ ნებისმიერ დროს შეცვალოთ ეს არჩევანი.
+          Visual style defines the overall aesthetics of your website. You can change these choices at any time.
         </p>
       </div>
     </div>
